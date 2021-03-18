@@ -44,29 +44,23 @@ All features and their short descriptions
 #### Derived Features:
 
 **User features:**<br>
-```mean_user_accuracy```: expanding mean user accuracy <br>
-```mean_accuracy_diff```: expanding mean of the difference between the mean user accuracy and mean content accuracy<br>
-```mean_user_content_accuracy```: expanding mean of the mean content accuracy of questions a user answered<br>
-```answered_correctly_user```: amount of questions a user answered correctly<br>
-```answered_user```: amount of questions a user answered<br>
+```user_mean```: expanding mean user accuracy <br>
+```user_cumcount```: amount of questions a user answered<br>
 **Content features:**<br>
-```mean_content_accuracy```: mean content accuracy given retry and prior_question_had_explanation (explained later)<br>
+```content_mean```: mean content accuracy <br>
 ```content_count```: amount of times a question is asked<br>
 **Part features:**<br>
-```part```: part the question belongs to, categorical feature<br>
-```mean_user_part_accuracy```: expanding mean accuracy for a user for the part the question belongs to<br>
-```answered_part_user```: amount of questions a user answered in the part the question belongs to<br>
+```part_avg```: expanding mean accuracy for a user for the part the question belongs to<br>
+```part_cumcount```: amount of questions a user answered in the part the question belongs to<br>
 **Tag features:**<br>
-```tag_2```: second tag of the question, categorical feature, -1 if question has no second part<br>
+```prior_tag```: tags from a last-minute lecture. It will be reset if you take a series of lectures or answer a question.(Tag number or -1)<br>
 **User content features:**<br>
-```hmean_user_content_accuracy```: harmonic mean of the mean_user_accuracy and mean_content_accuracy, based on this discussion<br>
-**Last interaction elapsed time:**<br>
-```last_interaction_elapsed_time_l1```: timestamp difference with last interaction<br>
-```last_interaction_elapsed_time_l2```: timestamp difference with two interactions earlier<br>
-```last_interaction_elapsed_time_l3```: timestamp difference with three interactions earlier<br>
-**Other:**<br>
 ```attempt```: amount of times a user has attempted the question, based on this discussion<br>
-```lectures_seen```: amount of lectures a user has seen
+```hmean_user_content_accuracy```: harmonic mean of the mean_user_accuracy and mean_content_accuracy, based on this discussion<br>
+```user_rating```: average difference between answered correctly and mean content accuracy
+**Last interaction elapsed time:**<br>
+```timestamp_diff1```: timestamp difference with last interaction<br>
+```timestamp_diff2```: timestamp difference with two interactions earlier<br>
 
 # Part II: Modeling
 ## Results
